@@ -75,9 +75,28 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+        <div class="sidebar row container py-4 ">
+            <div class="col-md-3 text-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link " href="{{route('home')}}">
+                            <span class="sidenav-normal"> Home </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="{{route('users.index')}}">
+                            <span class="sidenav-normal"> Users </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="content col-md-9">
+                @yield('content')
+            </div>
+        </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    @yield('script')
+
 </body>
 </html>

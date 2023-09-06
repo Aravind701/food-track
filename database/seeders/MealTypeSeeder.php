@@ -2,21 +2,24 @@
 
 namespace Database\Seeders;
 
+use App\Models\MealType;
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Role;
 
-class RoleSeeder extends Seeder
+class MealTypeSeeder extends Seeder
 {
     /**
      * @var array[]
      */
     protected $roles = [
         [
-            'name' => 'admin',
+            'name' => 'breakfast',
         ],
         [
-            'name' => 'user',
-        ]
+            'name' => 'lunch',
+        ],
+        [
+            'name' => 'dinner',
+        ],
     ];
 
     /**
@@ -27,7 +30,7 @@ class RoleSeeder extends Seeder
     public function run()
     {
         foreach ($this->roles as $role) {
-            Role::firstOrCreate(
+            MealType::firstOrCreate(
                 [
                     'name' => $role['name'],
                 ]
